@@ -1,0 +1,92 @@
+{
+  "enabled": {
+    "description": "启用插件",
+    "type": "bool",
+    "default": true,
+    "hint": "关闭后完全静默：不回应、不反戳，也不干预框架默认链路。"
+  },
+  "reply_in_group": {
+    "description": "群聊响应",
+    "type": "bool",
+    "default": true,
+    "hint": "群里有人戳机器人时是否回应。"
+  },
+  "reply_in_private": {
+    "description": "私聊响应",
+    "type": "bool",
+    "default": true,
+    "hint": "私聊里戳机器人时是否回应。"
+  },
+  "group_whitelist": {
+    "description": "群聊白名单",
+    "type": "list",
+    "default": [],
+    "hint": "填群号，留空表示所有群都响应。"
+  },
+  "cooldown_seconds": {
+    "description": "冷却时间（秒）",
+    "type": "int",
+    "default": 8,
+    "slider": {
+      "min": 0,
+      "max": 120,
+      "step": 1
+    },
+    "hint": "同一会话里同一个人连续戳时的最小间隔，0 表示不限。不同用户互不影响。"
+  },
+  "carry_history": {
+    "description": "携带对话历史",
+    "type": "bool",
+    "default": true,
+    "hint": "把当前会话的对话历史一起送进模型，回复能接上前文；关闭则只看这次戳一戳。"
+  },
+  "prompt_template": {
+    "description": "提示词模板",
+    "type": "text",
+    "default": "{username}（{user_id}）在{scene}里戳了你一下。请结合最近聊过的内容，用一句自然的话回应。不要复述这条说明，也不要解释“我被戳了”。",
+    "hint": "可用占位符：{username} 昵称、{user_id} QQ 号、{scene} 群聊或私聊。"
+  },
+  "pokeback": {
+    "description": "反戳",
+    "type": "object",
+    "items": {
+      "enabled": {
+        "description": "启用反戳",
+        "type": "bool",
+        "default": false,
+        "hint": "被戳之后顺手戳回去。默认关闭。"
+      },
+      "probability": {
+        "description": "反戳概率",
+        "type": "float",
+        "default": 0.15,
+        "slider": {
+          "min": 0,
+          "max": 1,
+          "step": 0.05
+        }
+      },
+      "times": {
+        "description": "反戳次数",
+        "type": "int",
+        "default": 1,
+        "slider": {
+          "min": 1,
+          "max": 5,
+          "step": 1
+        }
+      },
+      "interval": {
+        "description": "反戳间隔（秒）",
+        "type": "float",
+        "default": 0.4,
+        "slider": {
+          "min": 0,
+          "max": 3,
+          "step": 0.1
+        },
+        "hint": "多次反戳之间等待的时间，防风控。"
+      }
+    }
+  }
+}

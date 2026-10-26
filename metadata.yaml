@@ -1,0 +1,10 @@
+name: astrbot_plugin_poke_reply
+display_name: 戳一戳应答
+short_desc: 被戳时走标准 LLM 链路回一句，并给天使之魂补记忆检索词
+desc: 被戳一戳时用一句话自然回应。走标准 LLM 请求链路，人格、原生对话历史与其他钩子插件照常生效；同时给天使之魂写一份检索桥接数据，避免它拿「[Poke]」当记忆检索词。可选反戳，默认关闭。
+version: 0.1.0
+author: Just-Silver
+repo: https://github.com/Just-Silver/astrbot_plugin_poke_reply
+astrbot_version: ">=4.13.0,<5"
+support_platforms:
+  - aiocqhttp

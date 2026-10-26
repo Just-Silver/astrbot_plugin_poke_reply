@@ -1,0 +1,15 @@
+line-length = 120
+target-version = "py310"
+
+# 文档里的代码块属文档内容，不参与格式化。
+extend-exclude = ["*.md"]
+
+[lint]
+select = ["F", "W", "E", "ASYNC", "C4", "Q", "I", "UP"]
+ignore = [
+    "F403",
+    "F405",
+    "E501",
+    "ASYNC230",
+    "ASYNC240",
+]
