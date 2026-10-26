@@ -24,6 +24,7 @@ python -m ruff format --check .
 ## 文档
 
 - 用户视角改动 → `README.md`
+- 用户可感知的行为变化 → `CHANGELOG.md`（与 `metadata.yaml` 的 `version` 同步）
 - 契约 / 实现 / 边界改动 → `docs/design.md`
 - 新增文档须在同一次改动里登记到 `docs/README.md`
 
